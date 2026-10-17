@@ -3088,7 +3088,7 @@
     "links": [
       {
         "label": "16k",
-        "href": "https://github.com/spree/spree",
+        "href": "https://github.com/fs-solver-3/spree-ecommerce",
         "icon": {
           "library": "lucide",
           "name": "github"
@@ -3111,7 +3111,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/spree/spree",
+      "github": "https://github.com/fs-solver-3/spree-ecommerce",
       "x": "https://x.com/spreecommerce"
     }
   },

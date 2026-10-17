@@ -47,7 +47,7 @@ The full guides live on the docs site — this README intentionally stays short:
 
 ## Contributing
 
-The SDK lives in the [spree/spree monorepo](https://github.com/spree/spree) under `packages/admin-sdk` — see the repository docs for the development setup and the serializer → types → Zod generation pipeline.
+The SDK lives in the [fs-solver-3/spree-ecommerce monorepo](https://github.com/fs-solver-3/spree-ecommerce) under `packages/admin-sdk` — see the repository docs for the development setup and the serializer → types → Zod generation pipeline.
 
 ## License
 

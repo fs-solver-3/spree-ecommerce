@@ -192,7 +192,7 @@ describe('detectSpreeGems', () => {
         if (listCalls === 1)
           throw Object.assign(new Error('x'), {
             exitCode: 1,
-            stderr: 'The git source https://github.com/spree/spree.git is not yet checked out.',
+            stderr: 'The git source https://github.com/fs-solver-3/spree-ecommerce.git is not yet checked out.',
           })
         return { stdout: 'spree\nspree_core\n' }
       }
@@ -256,7 +256,7 @@ describe('detectSpreePackages', () => {
       dependencies: {
         '@spree/dashboard': 'workspace:^',
         '@spree/dashboard-core': 'file:../dashboard-core',
-        '@spree/admin-sdk': 'github:spree/spree#main',
+        '@spree/admin-sdk': 'github:fs-solver-3/spree-ecommerce#main',
       },
     })
     expect(detectSpreePackages(dir)).toEqual([])

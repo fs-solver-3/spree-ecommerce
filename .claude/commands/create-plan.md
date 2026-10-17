@@ -53,7 +53,7 @@ which is rare, and worth double-checking before concluding.
 Every plan is tracked as one Linear issue and one GitHub issue, opened once
 the open questions are settled so the issue describes the finished design.
 Record both in the plan's `**Tracking:**` header line, as
-`Linear V-NNNN · GitHub spree/spree#NNNN`. This section is the single
+`Linear V-NNNN · GitHub fs-solver-3/spree-ecommerce#NNNN`. This section is the single
 description of how the trackers are shaped; `/project:update-plan` and
 `/project:implement-plan` refer back to it.
 
@@ -75,7 +75,7 @@ final message so the author can open it by hand.
   already says which release it is.
 - Description, in plain words: the plan's Summary paragraph, its status line,
   what it depends on, the Migration Path steps, and a link to the plan file
-  at `https://github.com/spree/spree/blob/main/docs/plans/<file>`. Add the
+  at `https://github.com/fs-solver-3/spree-ecommerce/blob/main/docs/plans/<file>`. Add the
   same link through `links` so it shows as an attachment.
 - Status follows the plan's status: `Draft` and `Design finalized` → Backlog,
   `In Progress` → In Progress, `Implemented` → Done, `Superseded` → Canceled.
@@ -83,7 +83,7 @@ final message so the author can open it by hand.
 
 ### GitHub
 
-- `gh issue create --repo spree/spree --title "<H1>" --milestone "vX.Y"`.
+- `gh issue create --repo fs-solver-3/spree-ecommerce --title "<H1>" --milestone "vX.Y"`.
   No `Feature Request` label: the Roadmap membership already says what it
   is. Add `💼 B2B` or `🤝 Multi Vendor` when the plan belongs to that
   track. The body is the same summary as the Linear issue,
@@ -94,7 +94,7 @@ final message so the author can open it by hand.
   set its Status to `Todo`. The `gh project` subcommands fail here with
   "unknown owner type", so go through GraphQL with `gh api graphql`:
   `addProjectV2ItemById` with the project id `PVT_kwDN3X7OACniig` and the
-  issue's `node_id` (from `gh api repos/spree/spree/issues/<n>`), then
+  issue's `node_id` (from `gh api repos/fs-solver-3/spree-ecommerce/issues/<n>`), then
   `updateProjectV2ItemFieldValue` on the returned item with the Status
   field `PVTSSF_lADN3X7OACniis4BoTjq` and option `f75ad846` (Todo; In
   Progress is `47fc9ee4`, Done is `98236657`). This needs a token with the

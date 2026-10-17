@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.metadata = {
-    "bug_tracker_uri"   => "https://github.com/spree/spree/issues",
-    "changelog_uri"     => "https://github.com/spree/spree/releases/tag/v#{s.version}",
+    "bug_tracker_uri"   => "https://github.com/fs-solver-3/spree-ecommerce/issues",
+    "changelog_uri"     => "https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v#{s.version}",
     "documentation_uri" => "https://docs.spreecommerce.org/",
-    "source_code_uri"   => "https://github.com/spree/spree/tree/v#{s.version}",
+    "source_code_uri"   => "https://github.com/fs-solver-3/spree-ecommerce/tree/v#{s.version}",
   }
 
   s.required_ruby_version = '>= 3.2'

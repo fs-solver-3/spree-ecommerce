@@ -1,4 +1,4 @@
-// Posts a GitHub release of spree/spree to Discord as a digest embed: the
+// Posts a GitHub release of fs-solver-3/spree-ecommerce to Discord as a digest embed: the
 // intro paragraph, the upgrade command, feature titles, a one-line summary of
 // each other change, upgrade notes and contributors, with a link to the full
 // notes. Run by
@@ -14,7 +14,7 @@
 // Contributors listed in .github/discord-contributors.json (GitHub login →
 // Discord user id) are pinged in the message; Discord can't notify by name.
 
-const REPO = process.env.GITHUB_REPOSITORY || 'spree/spree'
+const REPO = process.env.GITHUB_REPOSITORY || 'fs-solver-3/spree-ecommerce'
 const COLOR = 0x2ecc71
 const MAX_TITLES = 8
 const MAX_SUMMARY = 120
@@ -49,7 +49,7 @@ if (dryRun) {
 }
 
 async function fetchRelease(tag) {
-  // Lets you try a payload from a saved `gh api repos/spree/spree/releases/tags/<tag>`.
+  // Lets you try a payload from a saved `gh api repos/fs-solver-3/spree-ecommerce/releases/tags/<tag>`.
   if (process.env.RELEASE_FILE) {
     const { readFileSync } = await import('node:fs')
     return JSON.parse(readFileSync(process.env.RELEASE_FILE, 'utf8'))

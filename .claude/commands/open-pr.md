@@ -3,7 +3,7 @@ description: Review, security-review, open and monitor a pull request for the cu
 ---
 
 Take the current branch from finished work to an open, monitored pull request
-on `spree/spree`. Run the steps in order and skip none because the change looks
+on `fs-solver-3/spree-ecommerce`. Run the steps in order and skip none because the change looks
 small. A pre-tool hook blocks `gh pr create` until steps 1–3 have run on the
 current `HEAD`.
 
@@ -35,7 +35,7 @@ Any later commit makes this stale; go back to step 1 before opening the PR.
 ## 4. Open the pull request
 
 Push the branch, then open the PR with
-`gh pr create --repo spree/spree --base main`. Follow AGENTS.md "Git" for the
+`gh pr create --repo fs-solver-3/spree-ecommerce --base main`. Follow AGENTS.md "Git" for the
 title and body. When a Linear issue exists, end the title with its id in
 parentheses and add `Linear: V-1234` on its own line in the body.
 

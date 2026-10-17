@@ -16,7 +16,7 @@ const newerRelease: UpdateStatus = {
   checked_at: '2026-10-03T04:00:00.000Z',
   update_available: true,
   latest_version: '6.0.1',
-  latest_release_url: 'https://github.com/spree/spree/releases/tag/v6.0.1',
+  latest_release_url: 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v6.0.1',
   latest_release_published_at: '2026-10-02T10:51:38.000Z',
 }
 

@@ -147,7 +147,7 @@ Then render it from your page component:
 />
 ```
 
-`<ResourceTable>` handles pagination, sorting, the filter panel, column visibility, and URL round-tripping of all of it. See [Routes](/v5/developer/dashboard/customization/routes) for the page around it — the [example Brands plugin](https://github.com/spree/spree/tree/main/packages/dashboard-plugin-example) shows the complete wiring.
+`<ResourceTable>` handles pagination, sorting, the filter panel, column visibility, and URL round-tripping of all of it. See [Routes](/v5/developer/dashboard/customization/routes) for the page around it — the [example Brands plugin](https://github.com/fs-solver-3/spree-ecommerce/tree/main/packages/dashboard-plugin-example) shows the complete wiring.
 
 ## Bulk actions, row actions, reordering
 
@@ -165,6 +165,6 @@ Use them freely on your own pages. They are **not registry-driven** — a plugin
 
 ## Reference
 
-- [`table-registry.ts`](https://github.com/spree/spree/blob/main/packages/dashboard-core/src/lib/table-registry.ts) — `defineTable`, `tables`, the full `ColumnDef` union
-- [`<ResourceTable>`](https://github.com/spree/spree/blob/main/packages/dashboard-core/src/components/resource-table.tsx) — props for bulk actions, row actions, drag-reordering
-- [Example Brands plugin](https://github.com/spree/spree/tree/main/packages/dashboard-plugin-example) — a real `defineTable` + `<ResourceTable>` + products-column extension
+- [`table-registry.ts`](https://github.com/fs-solver-3/spree-ecommerce/blob/main/packages/dashboard-core/src/lib/table-registry.ts) — `defineTable`, `tables`, the full `ColumnDef` union
+- [`<ResourceTable>`](https://github.com/fs-solver-3/spree-ecommerce/blob/main/packages/dashboard-core/src/components/resource-table.tsx) — props for bulk actions, row actions, drag-reordering
+- [Example Brands plugin](https://github.com/fs-solver-3/spree-ecommerce/tree/main/packages/dashboard-plugin-example) — a real `defineTable` + `<ResourceTable>` + products-column extension

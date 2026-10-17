@@ -250,7 +250,7 @@ describe Spree::Payment, type: :model do
     end
   end
 
-  # Regression test for https://github.com/spree/spree/pull/2224
+  # Regression test for https://github.com/fs-solver-3/spree-ecommerce/pull/2224
   context 'failure' do
     it 'transitions to failed from pending state' do
       payment.status = 'pending'

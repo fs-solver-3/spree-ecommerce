@@ -14,7 +14,7 @@
 ·
 [API](https://spreecommerce.org/docs/api-reference/)
 ·
-[Roadmap](https://github.com/spree/spree/milestones?direction=asc&sort=due_date&state=open)
+[Roadmap](https://github.com/fs-solver-3/spree-ecommerce/milestones?direction=asc&sort=due_date&state=open)
 ·
 [Discord](https://discord.spreecommerce.org)
 
@@ -36,13 +36,13 @@ Spree ships commerce primitives, so the same core serves very different business
 
 Seller onboarding with configurable requirement checklists, orders split per seller at completion, a flexible [commission engine](https://spreecommerce.org/docs/developer/core-concepts/commissions), a payout ledger with Stripe Connect, and a dedicated Seller Panel. All in the open-source core.
 
-<img alt="Spree Commerce - Multi-vendor Marketplace eCommerce" src="https://github.com/spree/spree/assets/12614496/c4ddd118-df4c-464e-b1fe-d43862e5cf25" width="600" >
+<img alt="Spree Commerce - Multi-vendor Marketplace eCommerce" src="https://github.com/fs-solver-3/spree-ecommerce/assets/12614496/c4ddd118-df4c-464e-b1fe-d43862e5cf25" width="600" >
 
 ### [B2B & Wholesale](https://spreecommerce.org/docs/developer/how-to/build-a-b2b-store)
 
 [Price lists](https://spreecommerce.org/docs/developer/core-concepts/pricing) with volume tiers, [customer groups](https://spreecommerce.org/docs/user/customers/customer-groups), [companies](https://spreecommerce.org/docs/developer/core-concepts/companies) with locations, contacts and tax exemptions, [catalogs](https://spreecommerce.org/docs/developer/core-concepts/catalogs) for per-segment assortments, and storefronts gated to approved buyers.
 
-<img src="https://github.com/spree/spree/assets/12614496/bac1e551-f629-47d6-a983-b385aa65b1bd" alt="Spree Commerce - Wholesale eCommerce Platform" width="600" >
+<img src="https://github.com/fs-solver-3/spree-ecommerce/assets/12614496/bac1e551-f629-47d6-a983-b385aa65b1bd" alt="Spree Commerce - Wholesale eCommerce Platform" width="600" >
 
 ### [Headless & Omnichannel](https://spreecommerce.org/docs/developer/core-concepts/channels)
 
@@ -122,7 +122,7 @@ Spree is an open-source project, and we love contributions in any form — pull 
 
 * Follow our [Contributing Guide](https://spreecommerce.org/docs/developer/contributing/quickstart)
 * [Join our Discord](https://discord.spreecommerce.org) to meet other community members
-* Browse the [Roadmap](https://github.com/spree/spree/milestones?direction=asc&sort=due_date&state=open) and open [Issues](https://github.com/spree/spree/issues)
+* Browse the [Roadmap](https://github.com/fs-solver-3/spree-ecommerce/milestones?direction=asc&sort=due_date&state=open) and open [Issues](https://github.com/fs-solver-3/spree-ecommerce/issues)
 
 ## Spree Enterprise Edition
 
@@ -136,7 +136,7 @@ Everything else — the APIs, the SDKs, the dashboard, marketplace, B2B and cros
 
 ## License
 
-Spree Commerce core code in the **[spree/spree](https://github.com/spree/spree)** repository is released under the free, open-source [BSD-3-Clause](https://opensource.org/license/bsd-3-clause) license ([LICENSE](https://github.com/spree/spree/blob/main/LICENSE)).
+Spree Commerce core code in the **[fs-solver-3/spree-ecommerce](https://github.com/fs-solver-3/spree-ecommerce)** repository is released under the free, open-source [BSD-3-Clause](https://opensource.org/license/bsd-3-clause) license ([LICENSE](https://github.com/fs-solver-3/spree-ecommerce/blob/main/LICENSE)).
 
 If you like what you see, consider giving Spree a GitHub star ⭐
 

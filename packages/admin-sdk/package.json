@@ -73,12 +73,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/spree/spree.git",
+    "url": "https://github.com/fs-solver-3/spree-ecommerce.git",
     "directory": "packages/admin-sdk"
   },
   "homepage": "https://spreecommerce.org",
   "bugs": {
-    "url": "https://github.com/spree/spree/issues"
+    "url": "https://github.com/fs-solver-3/spree-ecommerce/issues"
   },
   "devDependencies": {
     "@spree/sdk-core": "workspace:*",

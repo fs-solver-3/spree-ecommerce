@@ -5,7 +5,7 @@
 **Depends on:** (other plans or features)
 **Author:** (who drove the design)
 **Last updated:** YYYY-MM-DD
-**Tracking:** Linear V-NNNN · GitHub spree/spree#NNNN
+**Tracking:** Linear V-NNNN · GitHub fs-solver-3/spree-ecommerce#NNNN
 
 <!-- Tracking names the Linear issue (Spree project, milestone = target
      version) and the GitHub issue (milestone vX.Y, on the Roadmap project).

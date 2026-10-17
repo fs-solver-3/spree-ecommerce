@@ -281,8 +281,8 @@ randomUUID(); // '3b241101-e2bb-4255-8caf-4136c566a962'
 ## Links
 
 - [Spree documentation](https://spreecommerce.org/docs)
-- [Source code](https://github.com/spree/spree/tree/main/packages/core)
-- [Report an issue](https://github.com/spree/spree/issues)
+- [Source code](https://github.com/fs-solver-3/spree-ecommerce/tree/main/packages/core)
+- [Report an issue](https://github.com/fs-solver-3/spree-ecommerce/issues)
 
 ## License
 

@@ -12,7 +12,7 @@ module Spree
   # are never renamed; new keys only ever go beside them.
   class UpdateCheck
     ENDPOINT = 'https://spreecloud.io/updates.json'.freeze
-    RELEASES_URL = 'https://github.com/spree/spree/releases/tag/'.freeze
+    RELEASES_URL = 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/'.freeze
     RELEASE_TAG = /\Av\d+(\.[0-9a-z]+)*\z/
     CACHE_TTL = 1.day
     FAILURE_TTL = 1.hour

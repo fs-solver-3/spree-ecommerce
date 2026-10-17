@@ -2,7 +2,7 @@
 
 The Spree Commerce admin dashboard (the "React Dashboard") — a React single-page application that replaces the Classic Admin (the server-rendered Rails engine). Built on the [Admin API](https://spreecommerce.org/docs/api-reference/admin-api/introduction) via `@spree/admin-sdk`, with an extension model (nav, slots, tables, typed plugin routes) for plugin authors.
 
-Part of the three-package dashboard stack with [`@spree/dashboard-core`](https://github.com/spree/spree/tree/main/packages/dashboard-core) (the framework and extension API) and [`@spree/dashboard-ui`](https://github.com/spree/spree/tree/main/packages/dashboard-ui) (the design system).
+Part of the three-package dashboard stack with [`@spree/dashboard-core`](https://github.com/fs-solver-3/spree-ecommerce/tree/main/packages/dashboard-core) (the framework and extension API) and [`@spree/dashboard-ui`](https://github.com/fs-solver-3/spree-ecommerce/tree/main/packages/dashboard-ui) (the design system).
 
 The React Dashboard is the default admin from Spree 6.0. `@spree/dashboard` is released with Spree and carries its version: `@spree/dashboard@6.0.x` works with Spree 6.0.x.
 
@@ -33,7 +33,7 @@ The full guides live on the docs site — this README intentionally stays short:
 
 ## Contributing
 
-The dashboard lives in the [spree/spree monorepo](https://github.com/spree/spree) under `packages/dashboard` — see the repository docs (`CLAUDE.md`) for local development against a Spree backend and the Playwright E2E suite.
+The dashboard lives in the [fs-solver-3/spree-ecommerce monorepo](https://github.com/fs-solver-3/spree-ecommerce) under `packages/dashboard` — see the repository docs (`CLAUDE.md`) for local development against a Spree backend and the Playwright E2E suite.
 
 ## License
 

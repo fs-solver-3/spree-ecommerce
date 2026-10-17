@@ -1,7 +1,7 @@
 import { useResourceKey } from '@spree/dashboard-core'
 import { useQuery } from '@tanstack/react-query'
 
-const RELEASES_API = 'https://api.github.com/repos/spree/spree/releases/tags/'
+const RELEASES_API = 'https://api.github.com/repos/fs-solver-3/spree-ecommerce/releases/tags/'
 const STORAGE_PREFIX = 'spree-release-notes-html:'
 
 function readStored(tag: string): string | null {

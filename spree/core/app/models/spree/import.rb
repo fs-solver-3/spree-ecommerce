@@ -14,7 +14,7 @@ module Spree
     # elsewhere would let a released install link to a newer, incompatible
     # schema (or a file that has since been removed).
     SAMPLE_DATA_BASE_URL_TEMPLATE =
-      'https://raw.githubusercontent.com/spree/spree/refs/tags/v%<version>s/spree/core/db/sample_data'.freeze
+      'https://raw.githubusercontent.com/fs-solver-3/spree-ecommerce/refs/tags/v%<version>s/spree/core/db/sample_data'.freeze
 
     publishes_lifecycle_events
     publishes_events :completed, :progress

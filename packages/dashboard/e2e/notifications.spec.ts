@@ -14,7 +14,7 @@ async function stubRelease(page: Page, bodyHtml: string) {
         checked_at: new Date().toISOString(),
         update_available: true,
         latest_version: VERSION,
-        latest_release_url: `https://github.com/spree/spree/releases/tag/v${VERSION}`,
+        latest_release_url: `https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v${VERSION}`,
         latest_release_published_at: new Date().toISOString(),
       },
     }),
@@ -22,7 +22,7 @@ async function stubRelease(page: Page, bodyHtml: string) {
   // GitHub sends rendered HTML only when asked for it, so a request that stops
   // asking gets no notes and the spec fails.
   await page.route(
-    `https://api.github.com/repos/spree/spree/releases/tags/v${VERSION}`,
+    `https://api.github.com/repos/fs-solver-3/spree-ecommerce/releases/tags/v${VERSION}`,
     (route) => {
       const wantsHtml = route.request().headers().accept === 'application/vnd.github.html+json'
       return route.fulfill({
@@ -52,7 +52,7 @@ test.describe('notifications', () => {
       [
         `<h1>Spree ${VERSION}</h1>`,
         '<p>A <strong>big</strong> release.</p>',
-        '<ul><li>Fixed a thing <a href="https://github.com/spree/spree/pull/1">#1</a></li></ul>',
+        '<ul><li>Fixed a thing <a href="https://github.com/fs-solver-3/spree-ecommerce/pull/1">#1</a></li></ul>',
         '<p><img alt="Screenshot" src="https://github.com/user-attachments/assets/shot.png"></p>',
       ].join(''),
     )

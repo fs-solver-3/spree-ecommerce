@@ -1,10 +1,10 @@
 ---
-description: Deliver a docs/plans plan end to end — settle open questions, implement with the changed specs green locally and the full suite on CI, two code reviews plus a simplify pass, a migrated and seeded QA environment ready to start, schema review, and an open, monitored pull request on spree/spree.
+description: Deliver a docs/plans plan end to end — settle open questions, implement with the changed specs green locally and the full suite on CI, two code reviews plus a simplify pass, a migrated and seeded QA environment ready to start, schema review, and an open, monitored pull request on fs-solver-3/spree-ecommerce.
 argument-hint: <plan filename or slug>
 ---
 
 Implement a plan from `docs/plans/` end to end — from reading it to an open,
-monitored pull request on `spree/spree` with an environment prepared for manual QA.
+monitored pull request on `fs-solver-3/spree-ecommerce` with an environment prepared for manual QA.
 
 Plan: $ARGUMENTS (a plan filename or slug; if empty, list the plans in
 `docs/plans/` whose status shows unbuilt work and ask which one)

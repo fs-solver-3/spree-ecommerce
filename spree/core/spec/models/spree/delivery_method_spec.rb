@@ -137,7 +137,7 @@ describe Spree::DeliveryMethod, type: :model do
                                                                                                                 Spree::Calculator::Shipping::FlatPercentItemTotal,
                                                                                                                 Spree::Calculator::Shipping::PriceSack,
                                                                                                                 Spree::Calculator::FlatRate,
-                                                                                                                DummyShippingCalculator # included as regression test for https://github.com/spree/spree/issues/3109
+                                                                                                                DummyShippingCalculator # included as regression test for https://github.com/fs-solver-3/spree-ecommerce/issues/3109
                                                                                                               ])
 
       expect(described_class.calculators).to eq([Spree::Calculator::Shipping::FlatPercentItemTotal, Spree::Calculator::Shipping::PriceSack, DummyShippingCalculator])

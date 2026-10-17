@@ -751,7 +751,7 @@ describe Spree::Product, type: :model do
     end
   end
 
-  # Regression spec for https://github.com/spree/spree/issues/5588
+  # Regression spec for https://github.com/fs-solver-3/spree-ecommerce/issues/5588
   describe 'when duplicate SKUs are entered' do
     subject { second_product }
 

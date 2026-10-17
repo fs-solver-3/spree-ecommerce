@@ -39,7 +39,7 @@ request,  commit,  issue,  or  any  form  of  physical,  electronic,  verbal,  o
 communication with Vendo Connect or other Contributors;
 
 **1.6. "Spree Commerce"** means the open-source e-commerce platform, including all 
-its repositories available at  https://github.com/spree/, designed to facilitate the 
+its repositories available at  https://github.com/fs-solver-3/spree-ecommerce, designed to facilitate the 
 creation  and  management  of  online  stores.  Spree  Commerce  was  initially 
 developed predominantly by Spree Commerce Inc, then by Spark Solutions Sp. z 
 o.o. and currently by Vendo Connect.

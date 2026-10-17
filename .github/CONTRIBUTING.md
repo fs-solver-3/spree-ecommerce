@@ -45,7 +45,7 @@ Please read our [Code of Conduct](../CODE_OF_CONDUCT.md) before contributing.
 Spree is a big monorepo. For a faster clone, use a **partial clone** which downloads file contents on demand while keeping full commit history for `git log` and `git blame`:
 
 ```bash
-git clone --filter=blob:none https://github.com/spree/spree.git
+git clone --filter=blob:none https://github.com/fs-solver-3/spree-ecommerce.git
 ```
 
 ### Prerequisites
@@ -181,7 +181,7 @@ The Spree [Rails engines](https://guides.rubyonrails.org/engines.html) live insi
 
 ### Spree namespace
 
-All Spree models, controllers and other Ruby classes are namespaced by the `Spree` keyword, eg. `Spree::Product`. This means that those files are also located in `spree` sub-directories eg. [app/models/spree/product.rb](https://github.com/spree/spree/blob/main/spree/core/app/models/spree/product.rb).
+All Spree models, controllers and other Ruby classes are namespaced by the `Spree` keyword, eg. `Spree::Product`. This means that those files are also located in `spree` sub-directories eg. [app/models/spree/product.rb](https://github.com/fs-solver-3/spree-ecommerce/blob/main/spree/core/app/models/spree/product.rb).
 
 ### Running engine tests
 
@@ -469,7 +469,7 @@ A few tips:
 
 ## Submitting Changes
 
-We use [GitHub Actions](https://github.com/spree/spree/actions) to run CI.
+We use [GitHub Actions](https://github.com/fs-solver-3/spree-ecommerce/actions) to run CI.
 
 1. Push your changes to a topic branch in your fork of the repository.
 
@@ -496,7 +496,7 @@ To help us review your PR quickly:
 
 ## Reporting Bugs
 
-We use [GitHub Issues](https://github.com/spree/spree/issues) to track bugs. Before filing a new issue, please search existing issues to avoid duplicates.
+We use [GitHub Issues](https://github.com/fs-solver-3/spree-ecommerce/issues) to track bugs. Before filing a new issue, please search existing issues to avoid duplicates.
 
 When reporting a bug, please include:
 

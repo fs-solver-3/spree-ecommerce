@@ -895,7 +895,7 @@ where every reader looks, with a warning naming the replacement. Plan:
 Three findings killed the STI argument, all of them checkable in code that already existed:
 
 1. **Checkout copies attributes, not records.** `Spree::Purchase::Addresses#update_or_create_address` takes a params hash and ends at `Spree::Address.create(attributes)`, hardcoded to the base class. A company location's address entering checkout is reduced to a hash and reborn as a plain `Address`; the `type` never travels. The premise of the STI conversion — that the class survives the copy — was false on the only path that matters.
-2. **Keeping `type` significant for dedup breaks address-book reuse.** Deduplication matches on all attributes (`Spree::Address.find_duplicate`, which spree/spree#14486 consolidated from the three divergent copies that existed while this was being decided). With a `type` column, a business address and a personal address with identical postal details never dedupe, so a B2B buyer re-creates a row on every order.
+2. **Keeping `type` significant for dedup breaks address-book reuse.** Deduplication matches on all attributes (`Spree::Address.find_duplicate`, which fs-solver-3/spree-ecommerce#14486 consolidated from the three divergent copies that existed while this was being decided). With a `type` column, a business address and a personal address with identical postal details never dedupe, so a B2B buyer re-creates a row on every order.
 3. **The tax decision never consults the address class.** Per `6.1-channels-catalogs-b2b.md`, exemption hangs off `Company` and `resolved_tax_identifier` walks order → company → customer. The address's Ruby class contributes nothing.
 
 The base `Address` has carried a `company` column and preference-driven `require_company?` / `show_company_address_field?` predicates all along, so the mechanism for "this address belongs to a business" already existed and was already configurable. STI bought two boolean overrides at the cost of a column on one of the most-written tables in Spree, plus knock-on edits to `empty?`, the exclusion-list constants, `json_api_columns`, factories and six specs.
@@ -908,7 +908,7 @@ The base `Address` has carried a `company` column and preference-driven `require
 
 **Context:** `Spree::TaxIdentifier` carried one nullable FK per owner — customer, company, cart, order — with an `exactly_one_owner` validator holding the rule together, following the dual-FK convention from the Cart/Order split. The marketplace work added a fifth owner (Seller, per `6.0-multi-vendor-marketplace.md` Decision 12), which made the shape hard to defend: five columns, three near-identical per-owner uniqueness validations, and an `owner` method that was a five-way `||` chain.
 
-**Decision:** The table carries `owner_type`/`owner_id`. The dual-FK convention was adopted for cases where a polymorphic type string was hiding several different meanings in one table — split-adjustments removing `adjustable_type`, typed stock movements removing `originator_type`, each with methods dispatching on the string to tell six things apart. A tax identifier is not that: it is one concept, a tax registration, held by different kinds of party. The exactly-one rule becomes structural — a single FK cannot name two owners, and the owner is required by Rails' `belongs_to` default (spree/spree#14483 removed `Spree::Base`'s opt-out the same week), the three uniqueness validations collapse into `scope: [:owner_type, :owner_id]`, and a sixth owner costs no migration. Cardinality still varies by owner and is declared owner-side, where it always lived: `has_many` for customer, company and seller, `has_one` for cart and order. Because 6.0 is unreleased, the original `create_table` migration was amended in place rather than layering a conversion migration.
+**Decision:** The table carries `owner_type`/`owner_id`. The dual-FK convention was adopted for cases where a polymorphic type string was hiding several different meanings in one table — split-adjustments removing `adjustable_type`, typed stock movements removing `originator_type`, each with methods dispatching on the string to tell six things apart. A tax identifier is not that: it is one concept, a tax registration, held by different kinds of party. The exactly-one rule becomes structural — a single FK cannot name two owners, and the owner is required by Rails' `belongs_to` default (fs-solver-3/spree-ecommerce#14483 removed `Spree::Base`'s opt-out the same week), the three uniqueness validations collapse into `scope: [:owner_type, :owner_id]`, and a sixth owner costs no migration. Cardinality still varies by owner and is declared owner-side, where it always lived: `has_many` for customer, company and seller, `has_one` for cart and order. Because 6.0 is unreleased, the original `create_table` migration was amended in place rather than layering a conversion migration.
 
 **Rejected:** keeping five FKs on consistency grounds alone (the convention's rationale does not reach this table); a shared `exactly_one_owner` concern (it would formalise the workaround rather than remove it).
 
@@ -2975,7 +2975,7 @@ Plan: `6.0-service-workflows.md` decision 13.
 
 The provider contract in `6.0-tax-provider.md` was reworked after two
 outside implementers (an EU VAT decision engine, a US rates API) reviewed
-the RFC on spree/spree#14056. Every concern was verified before adoption:
+the RFC on fs-solver-3/spree-ecommerce#14056. Every concern was verified before adoption:
 against primary legal sources (the European e-invoicing standard, the VAT
 Directive, the EU verification service's own documentation — citations now
 live in the plan's **Regulatory background** section), the major provider
@@ -3463,7 +3463,7 @@ recommendation.
 
 ## 2026-07-15: Basic Stripe Connect payouts move to OSS; Enterprise repositions on money operations
 
-spree/spree#13323 originally kept "Stripe Connect onboarding, KYC, automatic
+fs-solver-3/spree-ecommerce#13323 originally kept "Stripe Connect onboarding, KYC, automatic
 payouts" in Enterprise. Amended by the issue author: the **basic** Stripe Connect
 path ships **open-source in the monorepo**, registering
 `Spree::PayoutProvider::StripeConnect` — Express-account onboarding (hosted link +
@@ -3501,7 +3501,7 @@ procurement source (`6.0-inventory-operations.md`, prefix `vnd_`). Same class
 name, same `spree_vendors` table, different domains — a hard collision.
 
 Resolution: **the marketplace owns the `Vendor` name.** It is locked publicly
-(spree/spree#13323, the user docs' "Vendors" area, the legacy Enterprise gem's
+(fs-solver-3/spree-ecommerce#13323, the user docs' "Vendors" area, the legacy Enterprise gem's
 `ven_` prefix and its production data). The inventory-operations model is renamed
 **`Spree::Supplier`** (`spree_suppliers`, prefix `sup_`, `/api/v3/admin/suppliers`) —
 matching the hosted leader's purchase-order vocabulary and standard ERP terminology. They
@@ -3516,7 +3516,7 @@ resells first-party) can later bridge the two with an optional
 ## 2026-06-16: Split 6.0 into Marketplace, defer B2B to 6.1
 
 6.0 is themed as the **Marketplace release**, headlined by open-sourcing the
-multi-vendor marketplace (per spree/spree#13323) alongside React dashboard GA and
+multi-vendor marketplace (per fs-solver-3/spree-ecommerce#13323) alongside React dashboard GA and
 the architecture/rename wave. B2B (Catalog + Company/CompanyLocation/CompanyContact
 from `6.0-channels-catalogs-b2b.md` Phase 2) moves to **6.1**, marketed as the B2B
 release. Rationale: a crowded 6.0 dilutes the launch; one sharp headline per release
@@ -4328,7 +4328,7 @@ depend on it, and the Admin API exposes `captured_amount`.
 
 ## 2026-08-07 — Admin RBAC: one grant system, staff-only, catalog = scope vocabulary
 
-**Decision:** (from spree/spree#14164; plan `6.0-admin-rbac.md`) Role
+**Decision:** (from fs-solver-3/spree-ecommerce#14164; plan `6.0-admin-rbac.md`) Role
 permissions become database-backed as flat `read_<resource>` /
 `write_<resource>` keys — the same vocabulary secret API keys use. One
 declarative catalog (resource → CanCanCan subjects → UI group) is the single
@@ -6722,7 +6722,7 @@ which loads them on demand.
 
 ## 2026-11-03 — Agent tools come from the Admin API document, and extensions ship theirs
 
-**Context:** An extension's workflow reached agents only through `expose_workflows` under a `Spree::Dependencies` key, with its schema read from `perform`'s YARD block and its endpoint found by scanning controller source for `Spree.<key>`. Building Enterprise quotes on it showed three silent failures: empty request bodies, workflows running in process when called another way, and parameter names bridged by guessing. spree/spree#15083 patched them and was closed: the 2026-10-10 MCP decision had already keyed the catalog on operations, and the patches deepened the dependency-key path instead.
+**Context:** An extension's workflow reached agents only through `expose_workflows` under a `Spree::Dependencies` key, with its schema read from `perform`'s YARD block and its endpoint found by scanning controller source for `Spree.<key>`. Building Enterprise quotes on it showed three silent failures: empty request bodies, workflows running in process when called another way, and parameter names bridged by guessing. fs-solver-3/spree-ecommerce#15083 patched them and was closed: the 2026-10-10 MCP decision had already keyed the catalog on operations, and the patches deepened the dependency-key path instead.
 
 **Decision:** Every non-CRUD write operation in the Admin API's OpenAPI document is an agent tool, opt-out with a stated reason; custom GET operations opt in. Name, description, path parameters and body schema come from the operation, and permission from the routed controller's write scope. Each extension generates `openapi/admin.yaml` from its own rswag specs and ships it in its gem; Spree merges every engine's document. CRUD stays with the generic tools, which take `parent_id` for nested resources. It ships in a 6.0 patch: `expose_workflows` is deprecated and has no effect (a workflow behind a documented endpoint is already that endpoint's tool), and is removed in 7.0. The 6.0.0 tools' renamed parameters and tool names stay accepted as aliases until 6.1. The agent layer stops reading `Spree::Dependencies`.
 

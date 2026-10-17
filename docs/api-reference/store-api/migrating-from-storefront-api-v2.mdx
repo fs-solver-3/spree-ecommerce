@@ -289,7 +289,7 @@ This is an area where API v3 has the biggest performance advantage over v2. `GET
 
 ### Cart and checkout
 
-This is the biggest conceptual change. The v2 cart was a singleton accessed via the order token header; v3 carts have prefixed IDs and live alongside line items, payments, fulfillments, and discount codes as nested resources. **There is no checkout state machine in v3.** Backend will handle that automatically, without any developer action needed. This aligns with [Spree 6 upcoming changes](https://github.com/spree/spree/issues/13930).
+This is the biggest conceptual change. The v2 cart was a singleton accessed via the order token header; v3 carts have prefixed IDs and live alongside line items, payments, fulfillments, and discount codes as nested resources. **There is no checkout state machine in v3.** Backend will handle that automatically, without any developer action needed. This aligns with [Spree 6 upcoming changes](https://github.com/fs-solver-3/spree-ecommerce/issues/13930).
 
 By default all Cart endpoints will return all associations auto-expanded.
 

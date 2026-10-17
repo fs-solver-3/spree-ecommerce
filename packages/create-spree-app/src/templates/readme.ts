@@ -188,7 +188,7 @@ SPREE_API_KEY=sk_... ${run} spree api post products --data '{"name":"New product
 - [Store API Reference](https://spreecommerce.org/docs/api-reference/store-api/introduction)
 - [Admin API Reference](https://spreecommerce.org/docs/api-reference/admin-api/introduction)
 - [CLI Reference](https://spreecommerce.org/docs/developer/cli/quickstart)
-- [Spree GitHub](https://github.com/spree/spree)
+- [Spree GitHub](https://github.com/fs-solver-3/spree-ecommerce)
 `
 
   return content

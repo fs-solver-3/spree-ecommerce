@@ -10,14 +10,14 @@ info:
   description: |-
     Storefront API is a modern REST API based on the [JSON API spec](https://jsonapi.org/) which provides you with all the necessary endpoints to build amazing user interfaces either in JavaScript frameworks or native mobile libraries.
 
-    Import to [Postman](https://raw.githubusercontent.com/spree/spree/main/docs/api-reference/storefront.yaml)
+    Import to [Postman](https://raw.githubusercontent.com/fs-solver-3/spree-ecommerce/main/docs/api-reference/storefront.yaml)
   contact:
     name: Vendo Connect Inc.
     url: "https://spreecommerce.org"
     email: hello@spreecommerce.org
   license:
     name: BSD-3-Clause
-    url: "https://github.com/spree/spree/blob/main/LICENSE.md"
+    url: "https://github.com/fs-solver-3/spree-ecommerce/blob/main/LICENSE.md"
 paths:
   /api/v2/storefront/account:
     get:

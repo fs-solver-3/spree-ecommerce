@@ -7,7 +7,7 @@
   "homepage": "https://spreecommerce.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/spree/spree.git",
+    "url": "https://github.com/fs-solver-3/spree-ecommerce.git",
     "directory": "packages/dashboard-core"
   },
   "keywords": [

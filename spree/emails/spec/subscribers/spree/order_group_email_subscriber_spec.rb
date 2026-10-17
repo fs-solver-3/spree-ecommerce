@@ -42,7 +42,7 @@ RSpec.describe Spree::OrderGroupEmailSubscriber do
     end
 
     # Matches the single-order subscriber: turning customer receipts off must
-    # not stop the store hearing about its own sales (spree/spree#14724).
+    # not stop the store hearing about its own sales (fs-solver-3/spree-ecommerce#14724).
     it 'still tells the store when customer receipts are switched off' do
       store.update!(preferences: store.preferences.merge(send_consumer_transactional_emails: false))
 

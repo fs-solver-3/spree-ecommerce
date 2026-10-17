@@ -13,7 +13,7 @@ info:
     url: "https://getvendo.com"
     email: sales@getvendo.com
   license:
-    url: "https://github.com/spree/spree/blob/main/LICENSE.md"
+    url: "https://github.com/fs-solver-3/spree-ecommerce/blob/main/LICENSE.md"
     name: BSD-3-Clause
 paths:
   /spree_oauth/token:

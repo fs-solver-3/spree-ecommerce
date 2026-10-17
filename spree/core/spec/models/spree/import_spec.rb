@@ -320,7 +320,7 @@ RSpec.describe Spree::Import, :job, type: :model do
     # the local db/sample_data, so the served file has to match that schema.
     it 'pins the URL to the installed Spree version' do
       expect(Spree::Imports::Products.sample_csv_url).to eq(
-        "https://raw.githubusercontent.com/spree/spree/refs/tags/v#{Spree.version}/spree/core/db/sample_data/products.csv"
+        "https://raw.githubusercontent.com/fs-solver-3/spree-ecommerce/refs/tags/v#{Spree.version}/spree/core/db/sample_data/products.csv"
       )
     end
 

@@ -4,25 +4,25 @@
 
 ### Patch Changes
 
-- [#14989](https://github.com/spree/spree/pull/14989) [`70ab2cd`](https://github.com/spree/spree/commit/70ab2cd786ea4395c1669563fcb4b942267c7080) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - When the mail catcher's usual ports are taken, the installer now says what is usually holding them and how to free them.
+- [#14989](https://github.com/fs-solver-3/spree-ecommerce/pull/14989) [`70ab2cd`](https://github.com/fs-solver-3/spree-ecommerce/commit/70ab2cd786ea4395c1669563fcb4b942267c7080) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - When the mail catcher's usual ports are taken, the installer now says what is usually holding them and how to free them.
 
 ## 2.4.1
 
 ### Patch Changes
 
-- [#14975](https://github.com/spree/spree/pull/14975) [`f86d75c`](https://github.com/spree/spree/commit/f86d75c467ca0fb39886a9d9813d59dfd7f73ccc) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Renamed the CLI commands and flags that were named after Rails tools, so each command describes what it does rather than which Rails tool runs it. `spree test` replaces `spree rspec`, `spree add <extension>` replaces `spree bundle add`, `spree migrate:rollback --steps n` replaces `STEP=n`, `spree build --reset-deps` replaces `--reset-bundle`, and `spree plugin new` takes `--backend-name` / `--no-backend`. `spree rails`, `spree rake`, `spree bundle`, `spree routes`, `spree rspec` and the old flags still work and print a notice naming the replacement; they will be removed in Spree 7.0. `spree test` now creates the test database when it is missing, so the suite runs on a fresh project with no setup step. Also fixed the setup-link hint `spree init` printed, which named a command that does not exist.
+- [#14975](https://github.com/fs-solver-3/spree-ecommerce/pull/14975) [`f86d75c`](https://github.com/fs-solver-3/spree-ecommerce/commit/f86d75c467ca0fb39886a9d9813d59dfd7f73ccc) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Renamed the CLI commands and flags that were named after Rails tools, so each command describes what it does rather than which Rails tool runs it. `spree test` replaces `spree rspec`, `spree add <extension>` replaces `spree bundle add`, `spree migrate:rollback --steps n` replaces `STEP=n`, `spree build --reset-deps` replaces `--reset-bundle`, and `spree plugin new` takes `--backend-name` / `--no-backend`. `spree rails`, `spree rake`, `spree bundle`, `spree routes`, `spree rspec` and the old flags still work and print a notice naming the replacement; they will be removed in Spree 7.0. `spree test` now creates the test database when it is missing, so the suite runs on a fresh project with no setup step. Also fixed the setup-link hint `spree init` printed, which named a command that does not exist.
 
 ## 2.4.0
 
 ### Minor Changes
 
-- [#14906](https://github.com/spree/spree/pull/14906) [`6bcdb66`](https://github.com/spree/spree/commit/6bcdb66e72b73777dbff5b6f6487e649f5b54c43) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - New projects now ask whether to install the Spree agent skills (default yes; `--agent-skills` / `--no-agent-skills` skip the question). The generated `AGENTS.md` is now the main instructions file for coding agents, with `CLAUDE.md` importing it, and it requires agents to run every command through the Spree CLI. `spree add dashboard` and `spree add seller-dashboard` now include a `CLAUDE.md` that imports the app's `AGENTS.md`, so Claude Code reads it too.
+- [#14906](https://github.com/fs-solver-3/spree-ecommerce/pull/14906) [`6bcdb66`](https://github.com/fs-solver-3/spree-ecommerce/commit/6bcdb66e72b73777dbff5b6f6487e649f5b54c43) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - New projects now ask whether to install the Spree agent skills (default yes; `--agent-skills` / `--no-agent-skills` skip the question). The generated `AGENTS.md` is now the main instructions file for coding agents, with `CLAUDE.md` importing it, and it requires agents to run every command through the Spree CLI. `spree add dashboard` and `spree add seller-dashboard` now include a `CLAUDE.md` that imports the app's `AGENTS.md`, so Claude Code reads it too.
 
-- [#14908](https://github.com/spree/spree/pull/14908) [`02ac2cf`](https://github.com/spree/spree/commit/02ac2cf3c34c09235132b3a5ef7724d4a78ccb89) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Added `spree add ai`, which installs the Spree agent skills and connects Claude Code, Cursor and VS Code to the Spree docs MCP server, so existing projects can get the same AI agent setup as new ones. It keeps the servers a project's config files already list and is safe to re-run. New projects now run it during setup: the agent skills question reads "Set up AI coding agents?" and covers both, and `--docs-mcp` / `--no-docs-mcp` answer the docs half on their own.
+- [#14908](https://github.com/fs-solver-3/spree-ecommerce/pull/14908) [`02ac2cf`](https://github.com/fs-solver-3/spree-ecommerce/commit/02ac2cf3c34c09235132b3a5ef7724d4a78ccb89) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Added `spree add ai`, which installs the Spree agent skills and connects Claude Code, Cursor and VS Code to the Spree docs MCP server, so existing projects can get the same AI agent setup as new ones. It keeps the servers a project's config files already list and is safe to re-run. New projects now run it during setup: the agent skills question reads "Set up AI coding agents?" and covers both, and `--docs-mcp` / `--no-docs-mcp` answer the docs half on their own.
 
 ### Patch Changes
 
-- [#14926](https://github.com/spree/spree/pull/14926) [`e0e980e`](https://github.com/spree/spree/commit/e0e980e3443f871c1be1f043766987948b019115) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - `spree add <extension>` installs an official extension in one step: Stripe, PayPal, Adyen, Avalara AvaTax, Klaviyo, EasyPost, Meilisearch, the MCP server and OpenTelemetry. It ejects a project still on the prebuilt image (after asking), adds the gem at the right version, runs the extension's installer and migrations, installs its dashboard plugin when it has one, and restarts a running server. A failed install puts the Gemfile back as it was. Extensions outside the list install with `spree add --gem <name> --npm <package>`, after a confirmation. New projects' agent instructions point coding agents at `spree add`.
+- [#14926](https://github.com/fs-solver-3/spree-ecommerce/pull/14926) [`e0e980e`](https://github.com/fs-solver-3/spree-ecommerce/commit/e0e980e3443f871c1be1f043766987948b019115) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - `spree add <extension>` installs an official extension in one step: Stripe, PayPal, Adyen, Avalara AvaTax, Klaviyo, EasyPost, Meilisearch, the MCP server and OpenTelemetry. It ejects a project still on the prebuilt image (after asking), adds the gem at the right version, runs the extension's installer and migrations, installs its dashboard plugin when it has one, and restarts a running server. A failed install puts the Gemfile back as it was. Extensions outside the list install with `spree add --gem <name> --npm <package>`, after a confirmation. New projects' agent instructions point coding agents at `spree add`.
 
 ## 2.3.1
 
@@ -34,33 +34,33 @@
 
 ### Minor Changes
 
-- [#14847](https://github.com/spree/spree/pull/14847) [`7d9bc01`](https://github.com/spree/spree/commit/7d9bc01dd82ba12938453caf76aa04e1b0c2637f) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Added the `--seller-dashboard` option, which includes the Seller Panel without asking. Together with `--no-start` and `--no-storefront` it lets scripts and CI create a project with no prompts.
+- [#14847](https://github.com/fs-solver-3/spree-ecommerce/pull/14847) [`7d9bc01`](https://github.com/fs-solver-3/spree-ecommerce/commit/7d9bc01dd82ba12938453caf76aa04e1b0c2637f) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Added the `--seller-dashboard` option, which includes the Seller Panel without asking. Together with `--no-start` and `--no-storefront` it lets scripts and CI create a project with no prompts.
 
 ## 2.2.0
 
 ### Minor Changes
 
-- [#14814](https://github.com/spree/spree/pull/14814) [`992b25e`](https://github.com/spree/spree/commit/992b25e00dc6b3ba9941f7223dd4d8cd17a25271) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Made the marketplace seller panel optional: `create-spree-app` now asks whether to install it (yes by default) and accepts `--no-seller-dashboard`. Added `--no-dashboard` for projects that are happy with the built-in admin dashboard; `--react-dashboard` is deprecated and does nothing. Apps are now set up in a consistent order — dashboard, seller panel, then storefront — and the storefront step looks the same as the others. `spree init` also installs the seller panel's dependencies, and both tools now point projects without their own dashboard at the built-in one instead of saying no admin is installed.
+- [#14814](https://github.com/fs-solver-3/spree-ecommerce/pull/14814) [`992b25e`](https://github.com/fs-solver-3/spree-ecommerce/commit/992b25e00dc6b3ba9941f7223dd4d8cd17a25271) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Made the marketplace seller panel optional: `create-spree-app` now asks whether to install it (yes by default) and accepts `--no-seller-dashboard`. Added `--no-dashboard` for projects that are happy with the built-in admin dashboard; `--react-dashboard` is deprecated and does nothing. Apps are now set up in a consistent order — dashboard, seller panel, then storefront — and the storefront step looks the same as the others. `spree init` also installs the seller panel's dependencies, and both tools now point projects without their own dashboard at the built-in one instead of saying no admin is installed.
 
 ### Patch Changes
 
-- [#14828](https://github.com/spree/spree/pull/14828) [`f61ff68`](https://github.com/spree/spree/commit/f61ff68db21d08385f743dc0bf46575fba0b284a) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Merged `spree update` into `spree upgrade`, which now upgrades both prebuilt-image and ejected projects and also updates the `@spree/*` packages of the project root and the dashboard apps. `spree update` keeps working for one release with a deprecation warning. New projects get an `upgrade` script instead of `update`.
+- [#14828](https://github.com/fs-solver-3/spree-ecommerce/pull/14828) [`f61ff68`](https://github.com/fs-solver-3/spree-ecommerce/commit/f61ff68db21d08385f743dc0bf46575fba0b284a) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Merged `spree update` into `spree upgrade`, which now upgrades both prebuilt-image and ejected projects and also updates the `@spree/*` packages of the project root and the dashboard apps. `spree update` keeps working for one release with a deprecation warning. New projects get an `upgrade` script instead of `update`.
 
 ## 2.1.0
 
 ### Minor Changes
 
-- [#14710](https://github.com/spree/spree/pull/14710) [`36df7c7`](https://github.com/spree/spree/commit/36df7c72be7b41d46c29bb0445244e18fedecae0) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - New projects get Active Record encryption keys: the generated `.env` now includes `ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY`, `ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY` and `ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT`, so webhook signing secrets, payment gateway customer IDs and OAuth tokens are encrypted at rest out of the box instead of being stored in plain text.
+- [#14710](https://github.com/fs-solver-3/spree-ecommerce/pull/14710) [`36df7c7`](https://github.com/fs-solver-3/spree-ecommerce/commit/36df7c72be7b41d46c29bb0445244e18fedecae0) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - New projects get Active Record encryption keys: the generated `.env` now includes `ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY`, `ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY` and `ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT`, so webhook signing secrets, payment gateway customer IDs and OAuth tokens are encrypted at rest out of the box instead of being stored in plain text.
 
 ### Patch Changes
 
-- [#14703](https://github.com/spree/spree/pull/14703) [`9e41f7d`](https://github.com/spree/spree/commit/9e41f7da03a9fd87050a78033620225922574d14) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - The generated README and the closing summary no longer point at a Rails admin at `/admin`, which Spree 6 does not have; without the React Dashboard, the summary shows the command that adds it. The subscriber example uses `order.placed` rather than the deprecated `order.completed`. The relocated `render.yaml` always builds `server/Dockerfile`, whether the starter's Blueprint was written for this layout or for deploying the starter on its own.
+- [#14703](https://github.com/fs-solver-3/spree-ecommerce/pull/14703) [`9e41f7d`](https://github.com/fs-solver-3/spree-ecommerce/commit/9e41f7da03a9fd87050a78033620225922574d14) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - The generated README and the closing summary no longer point at a Rails admin at `/admin`, which Spree 6 does not have; without the React Dashboard, the summary shows the command that adds it. The subscriber example uses `order.placed` rather than the deprecated `order.completed`. The relocated `render.yaml` always builds `server/Dockerfile`, whether the starter's Blueprint was written for this layout or for deploying the starter on its own.
 
 ## 2.0.2
 
 ### Patch Changes
 
-- [#14667](https://github.com/spree/spree/pull/14667) [`53008b4`](https://github.com/spree/spree/commit/53008b4a30eeca633206e726f0303f1f8c0673d3) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Point the generated agent instructions at files that exist.
+- [#14667](https://github.com/fs-solver-3/spree-ecommerce/pull/14667) [`53008b4`](https://github.com/fs-solver-3/spree-ecommerce/commit/53008b4a30eeca633206e726f0303f1f8c0673d3) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Point the generated agent instructions at files that exist.
 
   The scaffolded `AGENTS.md` sent dashboard work to a README that has since gained its own `AGENTS.md`, said nothing about the seller panel every project receives, listed a documentation directory that was renamed, and demonstrated a Ransack filter on `state`, which is no longer a queryable column.
 
@@ -78,7 +78,7 @@
 
 ### Major Changes
 
-- [#14431](https://github.com/spree/spree/pull/14431) [`aab4b5c`](https://github.com/spree/spree/commit/aab4b5ca517d2ef559a5ba292965d66bd2d6f38d) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Scaffolded apps no longer ship with a known admin password.
+- [#14431](https://github.com/fs-solver-3/spree-ecommerce/pull/14431) [`aab4b5c`](https://github.com/fs-solver-3/spree-ecommerce/commit/aab4b5ca517d2ef559a5ba292965d66bd2d6f38d) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Scaffolded apps no longer ship with a known admin password.
 
   Spree 6.0 replaces the seeded `spree@example.com` / `spree123` account with a first-run setup screen, so a new project no longer starts life with credentials that are public knowledge:
 
@@ -96,13 +96,13 @@
 
 ### Patch Changes
 
-- [`61f85af`](https://github.com/spree/spree/commit/61f85af83531f3bf5f17aaf105f144b02336d73c) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Auto-enable the storefront wholesale B2B portal on sample-data scaffolds: create-spree-app writes `SPREE_WHOLESALE_CHANNEL=wholesale` into the storefront `.env.local`, and setup output points at the portal (`/wholesale`) with the buyer-approval flow. The portal runs on the default publishable key — no extra key or backend changes involved.
+- [`61f85af`](https://github.com/fs-solver-3/spree-ecommerce/commit/61f85af83531f3bf5f17aaf105f144b02336d73c) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Auto-enable the storefront wholesale B2B portal on sample-data scaffolds: create-spree-app writes `SPREE_WHOLESALE_CHANNEL=wholesale` into the storefront `.env.local`, and setup output points at the portal (`/wholesale`) with the buyer-approval flow. The portal runs on the default publishable key — no extra key or backend changes involved.
 
 ## 1.2.0
 
 ### Minor Changes
 
-- [`70ff9ac`](https://github.com/spree/spree/commit/70ff9ac7278a520521f4eeba9fd55f3802a4f6fb) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Support the pnpm-native storefront template (spree/storefront now ships a `pnpm-lock.yaml` and pins pnpm via `packageManager`):
+- [`70ff9ac`](https://github.com/fs-solver-3/spree-ecommerce/commit/70ff9ac7278a520521f4eeba9fd55f3802a4f6fb) Thanks [@damianlegawiec](https://github.com/damianlegawiec)! - Support the pnpm-native storefront template (spree/storefront now ships a `pnpm-lock.yaml` and pins pnpm via `packageManager`):
   - Point the relocated storefront CI's `pnpm/action-setup` and setup-node dependency cache at `apps/storefront/` — both resolve from the repo root by default, where the storefront's package.json and lockfile don't exist in the generated layout, failing the workflow outright on pnpm scaffolds.
   - Stamp `packageManager` into the generated root package.json on pnpm scaffolds (steers corepack, and doubles as the pnpm version fallback for root-run workflows); omitted for npm/yarn scaffolds.
   - Install the cloned storefront with `--frozen-lockfile` under pnpm so template manifest/lockfile drift fails loudly instead of resolving silently to an untested tree.

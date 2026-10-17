@@ -51,4 +51,4 @@ end
 
 ## License
 
-Spree is released under the [New BSD License](https://github.com/spree/spree/blob/main/license.md).
+Spree is released under the [New BSD License](https://github.com/fs-solver-3/spree-ecommerce/blob/main/license.md).

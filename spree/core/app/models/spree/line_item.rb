@@ -61,7 +61,7 @@ module Spree
     MANUAL_PRICE_SOURCE = Spree::PricingProvider::MANUAL_PRICE_SOURCE
 
     # numericality: :less_than_or_equal_to validation is due to the restriction at the database level
-    #   https://github.com/spree/spree/issues/2695#issuecomment-143314161
+    #   https://github.com/fs-solver-3/spree-ecommerce/issues/2695#issuecomment-143314161
     validates :quantity, numericality: {
       in: 0..DB_INTEGER_MAX,
       only_integer: true, message: I18n.t('spree.validation.must_be_int')

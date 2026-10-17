@@ -303,7 +303,7 @@ module Spree
       false
     end
 
-    # see https://github.com/spree/spree/issues/981
+    # see https://github.com/fs-solver-3/spree-ecommerce/issues/981
     def build_source
       return unless new_record?
 

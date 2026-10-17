@@ -70,8 +70,8 @@ RSpec.describe Spree::UpdateCheck do
 
       expect(status.releases).to eq(
         [
-          { version: '99.1.0', url: 'https://github.com/spree/spree/releases/tag/v99.1.0', published_at: Time.iso8601('2026-10-09T10:00:00Z') },
-          { version: '99.0.0', url: 'https://github.com/spree/spree/releases/tag/v99.0.0', published_at: Time.iso8601('2026-10-02T10:51:38Z') }
+          { version: '99.1.0', url: 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v99.1.0', published_at: Time.iso8601('2026-10-09T10:00:00Z') },
+          { version: '99.0.0', url: 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v99.0.0', published_at: Time.iso8601('2026-10-02T10:51:38Z') }
         ]
       )
       expect(status).to have_attributes(enabled: true, update_available?: true)

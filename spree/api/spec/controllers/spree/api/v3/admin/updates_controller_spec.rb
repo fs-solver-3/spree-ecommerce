@@ -10,7 +10,7 @@ RSpec.describe Spree::Api::V3::Admin::UpdatesController, type: :controller do
     Spree::UpdateStatus.new(
       current_version: Spree.version,
       checked_at: Time.utc(2026, 10, 3, 4),
-      releases: [{ version: '99.0.1', url: 'https://github.com/spree/spree/releases/tag/v99.0.1', published_at: Time.utc(2026, 10, 2, 10, 51, 38) }]
+      releases: [{ version: '99.0.1', url: 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v99.0.1', published_at: Time.utc(2026, 10, 2, 10, 51, 38) }]
     )
   end
 
@@ -32,7 +32,7 @@ RSpec.describe Spree::Api::V3::Admin::UpdatesController, type: :controller do
         'checked_at' => '2026-10-03T04:00:00.000Z',
         'update_available' => true,
         'latest_version' => '99.0.1',
-        'latest_release_url' => 'https://github.com/spree/spree/releases/tag/v99.0.1',
+        'latest_release_url' => 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v99.0.1',
         'latest_release_published_at' => '2026-10-02T10:51:38.000Z'
       )
     end

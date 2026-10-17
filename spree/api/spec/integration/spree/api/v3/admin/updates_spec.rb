@@ -32,7 +32,7 @@ RSpec.describe 'Admin Updates API', type: :request, swagger_doc: 'api-reference/
             Spree::UpdateStatus.new(
               current_version: Spree.version,
               checked_at: Time.utc(2026, 10, 3, 4),
-              releases: [{ version: '6.0.1', url: 'https://github.com/spree/spree/releases/tag/v6.0.1', published_at: Time.utc(2026, 10, 2, 10, 51, 38) }]
+              releases: [{ version: '6.0.1', url: 'https://github.com/fs-solver-3/spree-ecommerce/releases/tag/v6.0.1', published_at: Time.utc(2026, 10, 2, 10, 51, 38) }]
             )
           )
         end

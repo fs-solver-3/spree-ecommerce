@@ -27,7 +27,7 @@ RSpec.shared_examples 'a payment processing host' do
       expect(record.process_payments!).to be_truthy
     end
 
-    # Regression spec for https://github.com/spree/spree/issues/5436
+    # Regression spec for https://github.com/fs-solver-3/spree-ecommerce/issues/5436
     it 'raises an error if there are no payments to process' do
       allow(record).to receive_messages unprocessed_payments: []
       expect(Spree::Payments::Process).not_to receive(:call)
@@ -78,7 +78,7 @@ RSpec.shared_examples 'a payment processing host' do
       end
     end
 
-    # Regression spec for https://github.com/spree/spree/issues/8148.
+    # Regression spec for https://github.com/fs-solver-3/spree-ecommerce/issues/8148.
     # events: true — the record learns its payment_total from payment
     # events now, and they are disabled by default in the test environment.
     it 'updates the record with correct payment total', events: true do

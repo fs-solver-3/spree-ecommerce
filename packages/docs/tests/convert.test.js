@@ -364,9 +364,9 @@ describe('rewriteLinks', () => {
   })
 
   it('does not rewrite external links', () => {
-    const input = '[GitHub](https://github.com/spree/spree)'
+    const input = '[GitHub](https://github.com/fs-solver-3/spree-ecommerce)'
     const result = rewriteLinks(input, 'developer/core-concepts')
-    expect(result).toBe('[GitHub](https://github.com/spree/spree)')
+    expect(result).toBe('[GitHub](https://github.com/fs-solver-3/spree-ecommerce)')
   })
 
   it('does not rewrite links to non-doc paths', () => {

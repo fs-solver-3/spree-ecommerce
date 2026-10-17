@@ -30,7 +30,7 @@ gem 'spree_emails'     # optional
 Or use the Rails application template:
 
 ```bash
-rails new my_store -m https://raw.githubusercontent.com/spree/spree/main/spree/template.rb
+rails new my_store -m https://raw.githubusercontent.com/fs-solver-3/spree-ecommerce/main/spree/template.rb
 ```
 
 ## Running Tests
